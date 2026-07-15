@@ -17,8 +17,8 @@ Kd_z_dot = Kp_z_dot / 39.01;
 Kp_psi_dot = 0.12;
 Kd_psi_dot = Kp_psi_dot / 24.75;
 
-Kp_phth_dot = 32.21e-3;
-Kd_phth_dot = 20e-4;
+Kp_phth_dot = 31.666e-3;
+Kd_phth_dot = 2e-3;
 
 t_d = 0:dt:10;
 counter = 1;

@@ -1,7 +1,7 @@
 plot_angular_vel = 0;
 plot_states = 1;
 plot_all = 0;
-k = [5];
+k = [4];
 % Plot individually
 %
 % figure
