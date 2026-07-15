@@ -20,4 +20,4 @@ Tz = Kp_psi_dot * err_psi_dot + Kd_psi_dot * err_psi_double_dot;
 
 screw = [-(m*g-Ft); Tx; Ty; Tz];
 
-screw = [(-m*g+Ft); 0; 0; Tz];
+screw = [(-m*g+Ft); 0; Ty; 0];
