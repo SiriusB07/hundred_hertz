@@ -1,7 +1,7 @@
 plot_angular_vel = 0;
 plot_states = 1;
 plot_all = 0;
-k = [12];
+k = [6];
 % Plot individually
 %
 % figure
@@ -242,7 +242,7 @@ if(plot_states == 1)
 
             % xrange = max(t_log) - min(t_log);
             l = 0;
-            % l = 1;
+            l = 1;
             k = max(t_log);
             k = 2;
             xlim([l k]);
