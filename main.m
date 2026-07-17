@@ -8,7 +8,7 @@ Kd_z = 0;
 Kp_psi = 3.8;
 Kd_psi = 0;
 
-Kp_phth = 2.25;
+Kp_phth = 2.64;
 Kd_phth = 0;
 
 Kp_z_dot = 13;
