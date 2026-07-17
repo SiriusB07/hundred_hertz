@@ -4,35 +4,42 @@ global A
 
 w_sq = A \ screw;
 
-if(w_sq(1) > 4e6 || w_sq(2) > 4e6 || w_sq(3) > 4e6 || w_sq(4) > 4e6)
-    % temp = max(w_sq);
-    w_sq = w_sq - 1e6*ones(size(w_sq));
-    temp = max(w_sq);
-    w_sq = w_sq .* (3e6 / temp);
-    w_sq = w_sq + 1e6*ones(size(w_sq));
-end
+% if(w_sq(1) > 4e6 || w_sq(2) > 4e6 || w_sq(3) > 4e6 || w_sq(4) > 4e6)
+%     % temp = max(w_sq);
+%     w_sq = w_sq - 1e6*ones(size(w_sq));
+%     temp = max(w_sq);
+%     w_sq = w_sq .* (3e6 / temp);
+%     w_sq = w_sq + 1e6*ones(size(w_sq));
+% end
 
 if(w_sq(1) < 0)
-    w_sq(1) = 0;
+    w1 = 0;
+    % w1 = -sqrt(-w_sq(1));
+else
+    w1 = sqrt(w_sq(1));
 end
 if(w_sq(2) < 0)
-    w_sq(2) = 0;
+    w2 = 0;
+    % w2 = -sqrt(-w_sq(2));
+else
+    w2 = sqrt(w_sq(2));
 end
 if(w_sq(3) < 0)
-    w_sq(3) = 0;
+    w3 = 0;
+    % w3 = -sqrt(-w_sq(3));
+else
+    w3 = sqrt(w_sq(3));
 end
 if(w_sq(4) < 0)
-    w_sq(4) = 0;
+    w4 = 0;
+    % w4 = -sqrt(-w_sq(4));
+else
+    w4 = sqrt(w_sq(4));
 end
 
-w1 = sqrt(w_sq(1));
-w2 = sqrt(w_sq(2));
-w3 = sqrt(w_sq(3));
-w4 = sqrt(w_sq(4));
 
 if(w1 > 2000)
     w1 = 2000;
-    disp("This should not be happening");
 end
 if(w2 > 2000)
     w2 = 2000;
