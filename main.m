@@ -5,7 +5,7 @@ init_all;
 Kp_z = 3.25;
 Kd_z = 0;
 
-Kp_psi = 2;
+Kp_psi = 3.8;
 Kd_psi = 0;
 
 Kp_phth = 2.25;
