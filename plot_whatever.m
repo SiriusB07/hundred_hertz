@@ -274,16 +274,32 @@ if(plot_states == 1)
                         peak_value = min(y_plot);
                         overshoot = max(0, (y_final - peak_value) / abs(y_delta) * 100);
                     end
+
+                    settling_tolerance = 0.02 * abs(y_delta);
+                    settling_idx = find(abs(y_plot - y_final) <= settling_tolerance, 1, 'first');
+                    if isempty(settling_idx)
+                        settling_time = NaN;
+                    else
+                        settling_time = NaN;
+                        for j = settling_idx:length(y_plot)
+                            if all(abs(y_plot(j:end) - y_final) <= settling_tolerance)
+                                settling_time = t_plot(j) - t_plot(1);
+                                break;
+                            end
+                        end
+                    end
                 else
                     rise_time = NaN;
                     overshoot = 0;
+                    settling_time = NaN;
                 end
 
                 % fprintf('\n%s\n', label(i));
                 % fprintf('Rise time: %.4f s\n', rise_time);
                 % fprintf('Overshoot: %.2f %%\n', overshoot);
+                % fprintf('Settling time: %.4f s\n', settling_time);
 
-                metric_text = sprintf('Rise time: %.4f s\nOvershoot: %.2f %%', rise_time, overshoot);
+                metric_text = sprintf('Rise time: %.4f s\nOvershoot: %.2f %%\nSettling time: %.4f s', rise_time, overshoot, settling_time);
                 text(0.8425, 0.98, metric_text, ...
                     'Units', 'normalized', ...
                     'VerticalAlignment', 'top', ...
