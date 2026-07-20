@@ -1,7 +1,7 @@
 plot_angular_vel = 0;
 plot_states = 1;
 plot_all = 0;
-k = [4];
+k = [9];
 
 phi = S_log(:,1);
 theta = S_log(:,2);
@@ -240,9 +240,9 @@ if(plot_states == 1)
 
             % xrange = max(t_log) - min(t_log);
             l = 0;
-            l = 1;
+            % l = 1;
             k = max(t_log);
-            k = 3;
+            k = 10;
             xlim([l k]);
             xticks(linspace(l, k, 11));
             grid on
