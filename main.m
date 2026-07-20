@@ -42,7 +42,7 @@ for i = 1:n-1
     counter = counter + 1;
     if(counter == 10)
         counter = 1;
-        outer_controller_p;
+        % outer_controller_p;
     end
 
     inner_controller;

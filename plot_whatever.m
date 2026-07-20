@@ -1,7 +1,7 @@
 plot_angular_vel = 0;
 plot_states = 1;
 plot_all = 0;
-k = [9];
+k = [12];
 
 phi = S_log(:,1);
 theta = S_log(:,2);
@@ -229,7 +229,7 @@ if(plot_states == 1)
 
     for i = k
             figure
-            plot(t_log, Sm(:,i))
+            plot(t_log, Sm(:,i), "LineWidth", 1.5, "Color", 'c')
             title(label(:, i));
 
             yrange = max(Sm(:,i)) - min(Sm(:,i));
@@ -242,7 +242,7 @@ if(plot_states == 1)
             l = 0;
             % l = 2;
             k = max(t_log);
-            k = 4;
+            k = 2;
             xlim([l k]);
             xticks(linspace(l, k, 11));
             grid on
@@ -284,7 +284,7 @@ if(plot_states == 1)
                 % fprintf('Overshoot: %.2f %%\n', overshoot);
 
                 metric_text = sprintf('Rise time: %.4f s\nOvershoot: %.2f %%', rise_time, overshoot);
-                text(0.02, 0.98, metric_text, ...
+                text(0.8425, 0.98, metric_text, ...
                     'Units', 'normalized', ...
                     'VerticalAlignment', 'top', ...
                     'BackgroundColor', 'black', ...
