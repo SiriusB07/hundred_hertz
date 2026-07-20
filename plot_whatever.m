@@ -1,7 +1,7 @@
 plot_angular_vel = 0;
 plot_states = 1;
 plot_all = 0;
-k = [2];
+k = [1];
 
 phi = S_log(:,1);
 theta = S_log(:,2);
