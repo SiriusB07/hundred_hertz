@@ -55,4 +55,6 @@ for i = 1:n-1
     log_values;
 end
 
-plot_whatever;
+% plot_whatever;
+
+save("./LoggedData/phi.mat", 'S_log', 'S_log_discrete', 't_log', 'screw_log', 'Wi_log', 'rates_d_log', 'rates_log', 'S_d_log');
